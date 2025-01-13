@@ -8,7 +8,6 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  target: 'static',
   css: [
     "~/node_modules/bootstrap/dist/css/bootstrap.min.css",
     '~/assets/css/main.css'

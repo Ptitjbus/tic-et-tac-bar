@@ -17,7 +17,7 @@
 import { reactive, toRefs, ref } from 'vue'
 import MainTitle from '@/components/UI/Title.vue'
 import windowWidthMixin from '@/mixins/windowWidthMixin'
-import cocktail1 from "~/assets/img/Cocktail7.png"
+import cocktail1 from "~/assets/img/cocktail7.png"
 import cocktail2 from "~/assets/img/Cocktail2.png"
 import cocktail3 from "~/assets/img/Cocktail3.png"
 import cocktail4 from "~/assets/img/Cocktail4.png"
