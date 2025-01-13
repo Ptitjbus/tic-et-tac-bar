@@ -4,14 +4,5 @@
     "cleanUrls": true,
     "framework": "nuxtjs",
     "installCommand": "npm install",
-    "outputDirectory": ".output/public",
-    "builds": [
-      {
-        "src": "nuxt.config.js",
-        "use": "@nuxtjs/vercel-builder",
-        "config": {
-          "serverFiles": ["package.json"]
-        }
-      }
-    ]
-  }
+    "outputDirectory": ".output/public"
+}
