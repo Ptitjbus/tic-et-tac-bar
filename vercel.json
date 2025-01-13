@@ -1,6 +1,10 @@
 {
     "version": 2,
-    "framework": "nuxt",
+    "buildCommand": "npm run build",
+    "cleanUrls": true,
+    "framework": "nuxtjs",
+    "installCommand": "npm install",
+    "outputDirectory": ".output/public",
     "builds": [
       {
         "src": "nuxt.config.js",
