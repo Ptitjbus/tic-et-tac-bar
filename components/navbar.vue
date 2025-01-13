@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar d-flex justify-content-between navbar-expand-sm fixed-top navbar-light transparent" v-bind:class=" { 'navbarOpen': show }" :style="$route.path === '/reservation' ? 'background-color: black' : 'background-color: transparent'">
+  <nav class="navbar z-20 d-flex justify-content-between navbar-expand-sm fixed-top navbar-light transparent" v-bind:class=" { 'navbarOpen': show }" :style="$route.path === '/reservation' ? 'background-color: black' : 'background-color: transparent'">
 
     <!-- logo desktop -->
     <router-link class="router-link-active router-link-exact-active nav-link nav-logo nav-item showOnPC logoOnPC" to="/">
@@ -9,7 +9,7 @@
     <div class="divToPush" v-bind:class="{ 'show': show }">
 
       <!-- nav bar items -->
-      <div class="collapse navbar-collapse rightchildText text-align-center" id="navbarSupportedContent" v-bind:class="{ 'show': show }">
+      <div class="navbar-collapse rightchildText text-align-center" id="navbarSupportedContent" v-bind:class="{ 'show': show }">
         <ul class="navbar-nav hidden-menu myUl text-center" >
           <li class="nav-item active text-align-center">
             <router-link class="router-link-active router-link-exact-active nav-link myItems" :class="!isMobile ? 'd-flex align-items-center' : ''" to="/">
@@ -21,14 +21,24 @@
 
             <hr class="showOnPhone myHr">
           </li>
-          
-          <li class="nav-item" >
-            <a class="nav-link text-align-center myItems" :class="!isMobile ? 'd-flex align-items-center' : ''" target="_blank" href="/carte.pdf">
+
+          <li class="nav-item">
+            <router-link class="nav-link text-align-center myItems" :class="!isMobile ? 'd-flex align-items-center' : ''" to="/bars">
               <span class="mobile-nav-style nav-style">
-                Notre carte
-                <div class="underline"></div>
+                Nos bars
+                <div class="underline" :style="$route.path=='/bars' ? 'width: 100%' : ''"></div>
               </span>
-            </a>
+            </router-link>
+            <hr class="showOnPhone myHr">
+          </li>
+          
+          <li class="nav-item">
+            <router-link class="nav-link text-align-center myItems" :class="!isMobile ? 'd-flex align-items-center' : ''" to="/about">
+              <span class="mobile-nav-style nav-style">
+                L’esprit Tic & Tac
+                <div class="underline" :style="$route.path=='/about' ? 'width: 100%' : ''"></div>
+              </span>
+            </router-link>
             <hr class="showOnPhone myHr">
           </li>
           
@@ -40,15 +50,6 @@
               </span>
             </router-link>
             <hr class="showOnPhone myHr">
-          </li>
-
-          <li v-if="isMobile" class="nav-item">
-            <router-link class="nav-link text-align-center aProposLink myItems" :class="!isMobile ? 'd-flex align-items-center' : ''" to="/about">
-              <span class="mobile-nav-style nav-style">
-                Nous découvrir
-                <div class="underline" :style="$route.path=='/about' ? 'width: 100%' : ''"></div>
-              </span>
-            </router-link>
           </li>
         </ul>
       </div>

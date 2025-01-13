@@ -3,11 +3,11 @@
     <div class="row">
       <div class="col-sm-6 d-flex flex-column justify-content-center align-items-center">
         <div style="width: 95%;">
-          <MainTitle label="Nous découvrir" :centered="!isMobile"></MainTitle>
+          <MainTitle label="L’esprit Tic & Tac" :centered="!isMobile"></MainTitle>
         </div>
 
         <div class="discover-text mt-4" style="width: 95%;">
-          <p v-for="(text, index) in texts" :key="index" class="text-light qualityParag textJustify" style="font-size: 16px;" >
+          <p v-for="(text, index) in texts" :key="index" class="text-light qualityParag textJustify text-pretty mb-2" style="font-size: 16px;" >
               {{ text }}
           </p>
         </div>
@@ -36,11 +36,11 @@ export default {
     })
 
     const texts = ref([
-      'Bienvenue au bar Tic & Tac, un établissement incontournable situé au cœur de la place Jules Guesdes, dans le septième arrondissement de Lyon. Notre bar à cocktails et bières vous invite à découvrir ses deux salles au charme unique.',
-      "Le bar Tic & Tac vous propose une vaste sélection de cocktails classiques et originaux, préparés avec soin à partir de liqueurs maison. Ne manquez pas l'Élixir de jouvence, un cocktail exclusif créé spécialement pour notre établissement par un talentueux Meilleur Ouvrier de France barman.",
-      'En plus de nos délicieux cocktails, nous vous offrons un choix varié de bières artisanales et régionales, disponibles en pression ou en bouteille. Quelles que soient vos préférences, nous avons certainement une bière qui saura ravir vos papilles.',
-      'Et si vous avez une petite faim, ne vous inquiétez pas ! Tic & Tac a pensé à tout. Dégustez nos généreuses planches à partager, préparées avec des charcuteries, des fromages et des tartinades locales, pour une expérience culinaire savoureuse.',
-      "Dès l'arrivée des beaux jours, ne manquez pas l'occasion de profiter de notre magnifique terrasse, où vous pourrez vous détendre et vous imprégner de l'atmosphère animée de la place Jules Guesdes.",
+      "L'histoire du Tic & Tac débute en 2018, lors d'une conversation spontanée entre Théo et Carl, deux amis inséparables rencontrés sur les bancs de la fac. Ce surnom, « Tic & Tac », leur a été donné par leurs proches, tant leur complicité était évidente. Lorsqu'ils ont décidé de lancer leur premier bar, ce nom s'est imposé naturellement comme une évidence.",
+      "Initialement, leur rêve était d'ouvrir un bar à Valence, en Espagne. Mais c'est à Lyon qu'ils ont choisi de poser leurs valises. En octobre 2022, ils inaugurent leur premier établissement au cœur du septième arrondissement, sur la place Jules Guesdes. Avec son ambiance chaleureuse, sa déco street art et son esprit de quartier, le Tic & Tac Lyon 7 rencontre un véritable succès.",
+      "Au cœur du projet se trouve une véritable passion pour les liqueurs maison. Théo et Carl ont consacré des centaines d'essais à élaborer ces recettes uniques, qui sont aujourd'hui la signature de leurs cocktails.",
+      "Fort de cette belle aventure, Théo et Carl décident de franchir une nouvelle étape en s'associant à leur ami Thomas pour ouvrir un deuxième bar. En 2024, ils donnent naissance au Tic & Tac Lyon 6, situé rue Garibaldi. Ce nouvel établissement, tout comme le premier, propose une offre gourmande et locale : cocktails originaux, bières artisanales, vins sélectionnés, spiritueux, et des planches généreuses composées de produits locaux.",
+      "Tic & Tac, c'est plus qu'un bar : c'est une histoire d'amitié, de voyages et de passion, un lieu pensé pour partager de bons moments, à l'image de ses fondateurs et de leur quête d'excellence.",
     ])
 
     

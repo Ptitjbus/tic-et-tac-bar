@@ -1,5 +1,5 @@
 <template>
-  <section class="container" style="position: absolute; top:0; left:0; background-color: rgba(0,0,0,0.95);">
+  <section class="absolute top-0 left-0 right-0 w-full z-20" style="position: absolute; top:0; left:0; background-color: rgba(0,0,0,0.95);">
     <div class="nav-container d-flex justify-content-between align-items-center p-4" >
       <router-link class="logo" to="/">
         <img :src="usedlogo" alt="tic&tac logo" style="width:100px">
@@ -16,9 +16,9 @@
       <transition>
         <div v-if="isNavbarMobileOpen">
           <router-link v-if="isNavbarMobileOpen" to="/" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Accueil</router-link>
-          <a v-if="isNavbarMobileOpen" href="/carte.pdf" target="_blank" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Notre carte</a>
+          <router-link v-if="isNavbarMobileOpen" to="/bars" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Nos bars</router-link>
           <router-link v-if="isNavbarMobileOpen" to="/reservation" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Réservation</router-link>
-          <router-link v-if="isNavbarMobileOpen" to="/about" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Nous découvrir</router-link>
+          <router-link v-if="isNavbarMobileOpen" to="/about" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">L’esprit Tic & Tac</router-link>
         </div>
         
       </transition>

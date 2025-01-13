@@ -6,7 +6,7 @@ export default {
   },
   computed: {
     isMobile() {
-      return this.windowWidth <= 769
+      return this.windowWidth <= 639
     },
     isTablet() {
       return !this.isMobile && this.windowWidth <= 1025

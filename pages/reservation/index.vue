@@ -46,8 +46,7 @@ export default {
   text-decoration: none;
 }
 .textJustify{
-    text-align: justify;
-  text-justify: inter-word;
+    text-justify: inter-word;
 }
 .email{
     margin-left: 15%;

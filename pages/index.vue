@@ -1,15 +1,6 @@
 <template>
-  <div>
-    <!-- Header Component -->
-    <div>
-      <Homehead />
-    </div>
-    <!-- Section Component -->
-    <div>
-      <Section />
-    </div>
-    
-  </div>
+    <Homehead />
+    <Section />
 </template>
 
 <script>

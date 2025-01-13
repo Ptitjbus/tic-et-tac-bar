@@ -1,31 +1,19 @@
 <template>
   <!-- header background image -->
-    <div :style="isTouch ? `backgroundImage: url(${barmobile})` : `backgroundImage: url(${bar})`" class="demo container-fluid" style="height: calc(100vh - 16px);">
-      <div class="d-flex justify-content-center align-items-center" style="height: 100%">
+    <div :style="isTouch ? `backgroundImage: url(${barmobile})` : `backgroundImage: url(${bar})` " class="backdrop-blur bg-opacity-50 relative bg-cover" style="height: calc(100vh - 16px);">
+      <div class="absolute top-0 right-0 bottom-0 left-0 bg-black opacity-20 z-0"></div>
+      <div class="relative d-flex justify-content-center align-items-center z-10" style="height: 100%">
         <!-- header text -->
-          <div class="col-sm-12 d-flex flex-column justify-content-center align-items-center" id="blocDescription">
-            <img :src="logonomono" class="myMonoLogo" id="logonomono" alt="tic&tac logo">
-  
-            <div class="row my-2">
-              <div class="col text-center myText2">
-                <h2>
-                  <span class="horairesAdresses horairesAdresses2 fs-5" data-v-3695d485="">135 Rue Sébastien Gryphe, 69007 LYON</span>
-                </h2>
-              </div>
-            </div>
+          <div class="col-sm-12 d-flex flex-column justify-content-center align-items-center">
+            <img :src="logonomono" class="myMonoLogo mb-3" id="logonomono" alt="tic&tac logo">
             
-            <div class="row my-2">
-              <div class="col text-center myText">
-                <h3>
-                  <span class="horairesAdresses fs-3" style="color: #ff8000;">De 17h00 à 01h00</span>
-                  <br>
-                  <span class="semaine fs-3">Du lundi au samedi</span>
-                </h3>
-              </div>          
+            <div class="row mb-4 col text-center myText">
+              <p class="horairesAdresses text-xl font-semibold lg:text-2xl lg:font-normal" style="color: #ff8000;">De 17h00 à 01h00</p>
+              <p class="text-lg lg:text-xl text-white">Du lundi au samedi</p>
             </div>
   
             <div class="row my-2">
-              <Button to="/carte.pdf" label="Notre carte" blank />
+              <Button to="/bars" label="Nos bars" routerLink />
               <Button v-if="!isMobile" to="/reservation" label="Réservation" style="margin-left: 1rem" router-link/>
             </div>
             
@@ -81,7 +69,7 @@ export default {
   }
 </script>
   
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
   @font-face {
       font-family: "Noto Sans";
       src: local("Noto Sans"),
@@ -151,10 +139,6 @@ export default {
     font-size:12em;
   }
   
-  #blocDescription{
-    margin-top:5%;
-  }
-  
   
   /* For Desktop View */
   @media screen and (min-width: 1024px) {
@@ -180,12 +164,6 @@ export default {
   
       #logonomono,.myMonoLogo {
           width: 80%;
-      }
-  
-      #blocDescription {
-          background: rgba(0,0,0,0.6);
-          padding: 1rem 0.5rem;
-          border-radius: 16px;
       }
   
       .demo {
@@ -304,5 +282,5 @@ export default {
   @media (min-device-height: 667px) and (min-device-width: 375px)
   and (-webkit-min-device-pixel-ratio: 3) {
   }
-  </style>
+</style>
   

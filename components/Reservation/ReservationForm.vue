@@ -2,7 +2,7 @@
   <div class="container mb-5">  
     <MainTitle v-if="!isEmailSent" label="Formulaire de réservation" black :centered="!isMobile"></MainTitle>
 
-    <h5 v-else>Votre demande de réservation a bien été prise en compte.<br /><br /> Cette dernière vous sera confirmée par l’équipe dans les plus brefs délais, merci.</h5>
+    <h5 v-else>Votre demande de réservation a bien été prise en compte.<br /><br /> Cette dernière vous sera confirmée par l'équipe dans les plus brefs délais, merci.</h5>
 
     <form v-if="!isEmailSent" class="form" ref="form" @submit.prevent="sendMail">
       <div class="form-row mt-5">

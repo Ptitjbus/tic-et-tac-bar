@@ -1,26 +1,23 @@
 <template>
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-sm-8 d-flex flex-column justify-content-center align-items-center">
-        
+    <div class="flex flex-col lg:flex-row my-5">
+      <div class="flex flex-column justify-content-center align-items-center">
         <MainTitle label="Nous concernant" centered></MainTitle>
         
         <div class="about-text mt-4" style="width: 75%;">
-          <p v-for="(text, index) in texts" :key="index" class="fs-6 text-light qualityParag textJustify" >
+          <p v-for="(text, index) in texts" :key="index" class="fs-6 text-light qualityParag text-center lg:!text-justify  mb-2 text-pretty" >
             {{ text }}
           </p>
         </div>
       </div>
 
-      <div class="col-sm-4 d-flex flex-column justify-content-center align-items-center">
+      <div v-if="!isTouch" class="col-sm-4 flex flex-col justify-content-center align-items-center">
           <img style="width: 80%;" :src="barmensImage" alt="About tic&tac barmens image" />
       </div>
-
-      <div v-if="isTouch" class="col-sm d-flex flex-column justify-content-center align-items-center my-3">
-        <Button to="/about" label="En savoir plus" blank router-link />   
-      </div>
     </div>
-  </div>
+    
+    <div class="col-sm flex flex-col justify-content-center align-items-center my-3">
+      <Button to="/about" label="En savoir plus" blank router-link />   
+    </div>
 </template>
 
 <script>

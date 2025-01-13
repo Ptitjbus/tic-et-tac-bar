@@ -1,20 +1,9 @@
 <template>
 <div style="background-color: black;">
-    <div> 
-        <!-- navbar -->
-        <navbarMobile v-if="isMobile"/>
-        <navbar v-else/>
-    </div>  
-
-    <div>
-        <!-- body -->
-        <slot />
-    </div>
-
-    <div>
-        <!-- footer -->
-        <foot />
-    </div>
+    <navbarMobile v-if="isMobile"/>
+    <navbar v-else/>
+    <slot />
+    <foot />
 </div>
 </template>
 

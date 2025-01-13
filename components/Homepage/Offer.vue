@@ -2,10 +2,10 @@
   <div class="container mt-4">
     <div class="row no-gutters">
       <div v-for="(offer, index) in offers" :key="index" class="col-sm-3" style="position: relative;">
-        <div class="text-white offer-text d-flex flex-column justify-content-center align-items-center">
-          <span style="color: #ff8000">{{offer.orangeLabel}}</span>
+        <p class="text-white offer-text d-flex flex-column justify-content-center align-items-center text-base md:text-lg lg:text-2xl xl:text-3xl font-semibold">
+          <span class="text-[#ff8000]">{{offer.orangeLabel}}</span>
           {{ offer.whiteLabel }}
-        </div>
+        </p>
 
         <div class="offer-filter"></div>
 
@@ -112,10 +112,6 @@ export default {
     width: 100%;
     height: 100%;
     z-index: 10;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 32px;
-    letter-spacing: 0.05em;
 }
 .offer-title-container{
   width: 100%;

@@ -1,10 +1,10 @@
 <template>
-  <router-link v-if="routerLink" class="main-button" :to="to">
-      {{ label }}<img src="../../assets/icons/hover-icon.svg" alt="icon" class="hover-icon" />
+  <router-link v-if="routerLink" :class="{ 'w-full': fullWidth }" class="bg-transparent border border-white backdrop-blur text-white font-semibold w-40 h-14 rounded-sm text-center text-lg hover:!text-black hover:!bg-white transition ease-in-out hover:duration-100 place-content-center" :to="to">
+      {{ label }}
   </router-link>
 
-  <a v-else class="main-button" :href="to" :target="blank ? '_blank': ''">
-    {{ label }}<img src="../../assets/icons/hover-icon.svg" alt="icon" class="hover-icon" />
+  <a v-else :class="{ 'w-full': fullWidth }" class="bg-transparent border border-white backdrop-blur text-white font-semibold w-40 h-14 rounded-sm text-center text-lg hover:!text-black hover:!bg-white transition ease-in-out hover:duration-100 place-content-center " :href="to" :target="blank ? '_blank': ''">
+    {{ label }}
   </a>
 </template>
 
@@ -29,46 +29,12 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    fullWidth: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.main-button{
-  width: fit-content;
-  height: fit-content;
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  padding: 0.6rem 1.2rem;
-  text-decoration: none;
-  font-weight: 500;
-  color: black;
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-  transition: all 200ms ease-in-out;
-  box-shadow: 0 0 40px 40px #fff inset, 0 0 0 0 #fff;
-  font-family: 'Montserrat', sans-serif;
-}
-.main-button span{
-  text-align: center;
-}
-.hover-icon{
-  width: 0;
-  height: auto;
-  margin-left: 0px;
-  margin-right: 0px;
-  transition: 0.2s;
-}
-.main-button:hover .hover-icon{
-  width: 22px;
-  margin-left: 8px;
-  margin-right: -8px;
-}
-// .main-button:hover{
-//   box-shadow: 0 0 0px 0 #fff inset, 0 0 0px 0px #fff;
-//   color: #fff!important;
-//   background-color: transparent!important;
-// }
-</style>
