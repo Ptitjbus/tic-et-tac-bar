@@ -74,7 +74,13 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-
+- justifier les textes
+- page d'accueil : nos bars -> nos établissements
+- Résezrver une table
+- faire sauter les textes
+- aucun détails sur chaque bars dans la page d'accueil
+- page de contact buisiness dans le footer -> refaire le footer
+- voir carte -> notre carte
 
 ### TODO ✔
 
