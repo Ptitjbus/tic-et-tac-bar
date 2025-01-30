@@ -1,73 +1,61 @@
 <template>
-    <div class="bg-other">
-        <div class="container pt-3 pb-4 myContainerToEnlarge">
-            <div class="row text-white text-center mt-6 pt-3 myContainerToEnlarge">
-                <div class="col-sm">
-                    <h3 class="text-yellow mt-3 ">Adresse</h3>
-                    <p class="text-break">
-                        <a class="text-white text-decoration-none text-yellow" href="mailto:contact@tic-et-tac-bar.fr">
-                            135 Rue Sébastien Gryphe
-                        </a>
-                    </p>
-                    <p>69007 LYON</p>
-                </div>
-                <div class="col-sm">
-                    <h3 class="text-yellow mt-3">Contact</h3>
-                    <address>
-                        <p class="text-break">
-                            <a class="text-white text-decoration-none text-yellow" href="mailto:contact@tic-et-tac-bar.fr">
-                                contact@tic-et-tac-bar.fr
-                            </a>
-                        </p> 
-                    </address>
-                </div>
-                <div class="col-sm ">
-                    <h3 class="text-yellow mt-3">Horaires</h3>
-                    <p>du lundi au samedi</p>
-                    <p>De 17h00 à 01h00</p>
-                </div>
-                
-            </div>
-            <hr style="color: white">
-            <div class="container-fuiled">
-                <!-- row -->
-                <div class="row">
-                    <!-- copyright column -->
-                    <div class="col-sm">
-                        <div class="pt-3 text-white text-center">
-                            © {{date}} Copyright 
-                            <p class="text-white text-decoration-none">Tic &amp; Tac Bar</p>
-                        </div>
-                    </div>
-                    <!-- links column -->
-                    <div class="col-sm text-white text-center fs-3" :class="!isMobile ? 'row' : ''">
-                        <div class="d-flex justify-content-around align-items-center">
-                            <div class="col-sm-6 col-8">
-                                <!-- Instagram link -->
-                                <a class="text-white text-decoration-none" href="https://www.instagram.com/tic.et.tac.bar/"><Icon name="mdi:instagram" color="#ff8000" size="32px" /></a>
-                                <!-- Google map link-->
-                                <a class="text-white text-decoration-none mySiteIcons" href="https://goo.gl/maps/AMMvjQtaDPKYQYaSA"><Icon name="mdi:map-marker-radius-outline" color="#ff8000" size="32px" /></a>
-                                <!-- Mail link -->
-                                <a class="text-white text-decoration-none mySiteIcons" href="mailto:contact@tic-et-tac-bar.fr"><Icon name="mdi:email-outline" color="#ff8000" size="32px" /></a>
 
-                            </div>  
-                        </div>
-                    </div>
-                    <!-- Privacy Policy link and Terms Condition link column -->
-                    <div class="col-sm p-3  text-white text-center">
-                        <div class="col">
-                        <a href="/carte.pdf" class="text-decoration-none text-white pe-1" target="_blank">Menu </a>
-                        </div>
-                    </div>
+
+<footer class="bg-black">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+          <div class="mb-8 md:mb-0">
+              <a href="https://tic-et-tac-bar.fr/">
+                  <img :src="logonomono" class="h-8 me-3" id="logonomono" alt="tic&tac logo">
+              </a>
+          </div>
+          <div class="flex flex-wrap gap-8 sm:gap-16 sm:grid-cols-3">
+                <div class="w-full sm:w-auto">
+                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">À propos</h2>
+                    <ul class=" text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <router-link to="/about" class="hover:underline">L'esprit Tic & Tac</router-link>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">Nos établissements</h2>
+                    <ul class=" text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <router-link to="/bars/lyon-6" class="hover:underline">Lyon 6</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/bars/lyon-7" class="hover:underline">Lyon 7</router-link>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">Contact</h2>
+                    <ul class=" text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <router-link to="/reservation" class="hover:underline">Réservations</router-link>
+                        </li>
+                        <li>
+                            <a class="hover:underline" href="mailto:contact@tic-et-tac-bar.fr">Business</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <hr class="my-6 sm:mx-auto border-gray-700 lg:my-8" />
+        <div class="flex justify-center"> 
+            <span class="text-sm  sm:text-center text-gray-400"> © {{date}} <a href="" class="hover:underline">
+                Tic &amp; Tac Bar</a> - Tous droits réservés.
+            </span>
+        </div>
     </div>
+</footer>
 </template>
 
 <script>
 import { ref } from 'vue'
 import windowWidthMixin from '@/mixins/windowWidthMixin'
+import logonomono from "~/assets/img/logo-navbar.png"
 
 export default {
 name:'foot',
@@ -76,7 +64,8 @@ setup(){
     //Copyright Date
     const date=ref(new Date().getFullYear())
     return{
-        date
+        date,
+        logonomono
     }
 }
 }
@@ -87,90 +76,5 @@ setup(){
     font-family: "Noto Sans";
     src: local("Noto Sans"),
     url(@/assets/fonts/NotoSans-Regular.ttf) format("truetype");
-}
-
-.bg-other{
-    background-color: #000
-}
-
-.bg-yellow{
-    background-color: #ff8000
-}
-
-.text-yellow{
-    color: #ff8000
-}
-
-/* For Desktop View */
-@media screen and (min-width: 1024px) {
-
-}
-
-/* For Tablet View */
-@media screen and (min-device-width: 768px)
-and (max-device-width: 1024px) {
-
-}
-
-/* For Mobile Portrait View */
-@media screen and (max-device-width: 480px)
-and (orientation: portrait) {
-.textCarreJaune{
-    width:100%!important
-}
-
-.showOnPC{
-    display: none
-}
-
-.myContainerToEnlarge{
-    width: 100%!important;
-    margin: 0!important;
-    padding: 0!important
-}
-
-.myIcons{
-    display: inline-block!important;
-    width: 100%!important
-}
-
-.mySiteIcons{
-    margin-left: 10%!important;
-}
-}
-
-@media screen and (min-device-width: 720px) {
-.mySiteIcons{
-    padding-left:25%!important
-}
-
-.myIcons{
-    display: inline-block!important;
-    width: 100%!important
-}
-}
-/* For Mobile Landscape View */
-@media screen and (max-device-width: 640px)
-and (orientation: landscape) {
-
-}
-
-/* For Mobile Phones Portrait or Landscape View */
-@media screen and (max-device-width: 640px) {
-}
-
-/* For iPhone 4 Portrait or Landscape View */
-@media screen and (min-device-width: 320px)
-and (-webkit-min-device-pixel-ratio: 2) {
-}
-
-/* For iPhone 5 Portrait or Landscape View */
-@media (device-height: 568px) and (device-width: 320px)
-and (-webkit-min-device-pixel-ratio: 2) {
-}
-
-/* For iPhone 6 and 6 plus Portrait or Landscape View */
-@media (min-device-height: 667px) and (min-device-width: 375px)
-and (-webkit-min-device-pixel-ratio: 3) {
 }
 </style>

@@ -16,9 +16,9 @@
       <transition>
         <div v-if="isNavbarMobileOpen">
           <router-link v-if="isNavbarMobileOpen" to="/" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Accueil</router-link>
-          <router-link v-if="isNavbarMobileOpen" to="/bars" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Nos bars</router-link>
-          <router-link v-if="isNavbarMobileOpen" to="/reservation" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Réservation</router-link>
+          <router-link v-if="isNavbarMobileOpen" to="/bars" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Nos établissements</router-link>
           <router-link v-if="isNavbarMobileOpen" to="/about" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">L’esprit Tic & Tac</router-link>
+          <router-link v-if="isNavbarMobileOpen" to="/reservation" class="link mb-3" @click="isNavbarMobileOpen = !isNavbarMobileOpen">Réserver une table</router-link>
         </div>
         
       </transition>

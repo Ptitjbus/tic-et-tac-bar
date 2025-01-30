@@ -7,7 +7,7 @@
         </div>
 
         <div class="discover-text mt-4" style="width: 95%;">
-          <p v-for="(text, index) in texts" :key="index" class="text-light qualityParag textJustify text-pretty mb-2" style="font-size: 16px;" >
+          <p v-for="(text, index) in texts" :key="index" class="text-light text-justify text-pretty mb-2" style="font-size: 16px;" >
               {{ text }}
           </p>
         </div>

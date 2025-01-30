@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col my-5 px-7 md:px-24 xl:px-52">
-        <MainTitle label="Nos bars"></MainTitle>
+        <MainTitle label="Nos établissements"></MainTitle>
         
         <div class="flex flex-col xl:flex-row h-screen pt-12 pb-24 gap-10 text-white">
             <router-link to="/bars/lyon-6" class="relative w-full h-full flex flex-col justify-end px-4 pb-6 overflow-clip group">

@@ -1,5 +1,5 @@
 <template>
-<div style="background-color: black;">
+<div class="bg-black">
     <navbarMobile v-if="isMobile"/>
     <navbar v-else/>
     <slot />

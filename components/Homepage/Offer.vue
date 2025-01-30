@@ -1,29 +1,27 @@
 <template>
-  <div class="container mt-4">
-    <div class="row no-gutters">
-      <div v-for="(offer, index) in offers" :key="index" class="col-sm-3" style="position: relative;">
-        <p class="text-white offer-text d-flex flex-column justify-content-center align-items-center text-base md:text-lg lg:text-2xl xl:text-3xl font-semibold">
-          <span class="text-[#ff8000]">{{offer.orangeLabel}}</span>
-          {{ offer.whiteLabel }}
+  <div class="container mt-4 mb-32">
+
+    <div  class="flex flex-col justify-content-center align-items-center text-white my-16">
+        <MainTitle label="Nos offres" centered />
+        <p class="text-center mt-3 lg:text-lg font-light">
+          Offrez vous les meilleurs produits locaux, et savourez les créations et liqueurs maison faîtes avec soin.
         </p>
+    </div>
 
+    <div class="row gap-3 md:!gap-0 no-gutters">
+      <div v-for="(offer, index) in offers" :key="index" class="col-sm-3 relative ">
+        <p class="text-white offer-text d-flex flex-column justify-content-center align-items-center text-3xl md:text-lg lg:text-2xl xl:text-3xl font-semibold">
+            <span class="text-[#ff8000]">
+              {{offer.orangeLabel}}
+            </span>
+            {{ offer.whiteLabel }}
+        </p>
         <div class="offer-filter"></div>
-
         <img :src="offer.src" :alt="offer.label" class="offer-image"/>
       </div>
     </div>
   </div>
 
-  <div v-if="!isTouch" class="container offer-title-container d-flex flex-column justify-content-center align-items-center">
-    <div class="offer-title d-flex flex-column justify-content-center align-items-center">
-      <div class="offer-title-text d-flex flex-column justify-content-center align-items-center">
-        <MainTitle label="Notre offre" centered />
-        <p>
-          <span style="color: #ff8000">Offrez</span> vous les meilleurs produits <span style="color: #ff8000">locaux</span>, et <span style="color: #ff8000">savourez</span> les créations et liqueurs maison faîtes avec <span style="color: #ff8000">soin.</span>
-        </p>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>

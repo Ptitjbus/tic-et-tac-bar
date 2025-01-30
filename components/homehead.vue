@@ -12,13 +12,9 @@
               <p class="text-lg lg:text-xl text-white">Du lundi au samedi</p>
             </div>
   
-            <div class="row my-2">
-              <Button to="/bars" label="Nos bars" routerLink />
-              <Button v-if="!isMobile" to="/reservation" label="Réservation" style="margin-left: 1rem" router-link/>
-            </div>
-            
-            <div v-if="isMobile" class="row my-2">
-              <Button to="/reservation" label="Réservation" router-link />
+            <div class="flex flex-col my-2 gap-3 w-full md:w-96 p-3">
+              <Button to="/bars" label="Nos établissements" routerLink />
+              <Button to="/reservation" label="Réserver une table" routerLink />
             </div>
           </div>
         </div>
