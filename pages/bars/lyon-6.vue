@@ -1,6 +1,6 @@
 <template>
   <article class="bg-black" :style="isMobile ? 'padding-top: 5rem;' : 'padding-top: 2rem;'">
-    <BarPageHero title="Lyon 6" address="47 Rue Garibaldi, 69006 Lyon" year="2023" horaires="17h00 à 01h00" :image-path="pageData.image" />
+    <BarPageHero title="Lyon 6" address="47 Rue Garibaldi, 69006 Lyon" year="2025" horaires="17h00 à 01h00" :image-path="pageData.image" />
     <div class="flex flex-col lg:flex-row px-3 sm:!px-12 lg:!px-40 min-h-screen pb-24 relative">
       <div class="flex flex-col gap-5 basis-2/3 lg:pr-8 lg:mr-8 ">
         <section class="flex flex-col gap-3 text-gray-200">
