@@ -1,20 +1,18 @@
 <template>
-  <div class="container mb-5 bg-black">
-    <div class="row">
-      <div class="col-sm-6 d-flex flex-column justify-content-center align-items-center">
-        <div style="width: 95%;">
-          <MainTitle label="L’esprit Tic & Tac" :centered="!isMobile"></MainTitle>
-        </div>
+  <div class="container min-h-screen bg-black">
+    <div class="flex flex-col gap-12 lg:flex-row">
+      <div class="flex flex-col justify-content-center mb:w-3/5">
+        <MainTitle label="L'esprit Tic & Tac" class="mb-5"></MainTitle>
 
-        <div class="discover-text mt-4" style="width: 95%;">
-          <p v-for="(text, index) in texts" :key="index" class="text-light text-justify text-pretty mb-2" style="font-size: 16px;" >
+        <div class="mt-4">
+          <p v-for="(text, index) in texts" :key="index" class="text-lg font-sans text-white text-pretty mb-3" >
               {{ text }}
           </p>
         </div>
       </div>
 
-      <div class="col-sm-6 d-flex flex-column justify-content-center align-items-center">
-          <img style="width: 80%;" :src="discoverImage" alt="Discover tic&tac bar image">
+      <div class="flex flex-col justify-center items-center mb:w-2/5">
+          <img :src="discoverImage" alt="Discover tic&tac bar image">
       </div>
     </div>
   </div>

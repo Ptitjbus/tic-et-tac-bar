@@ -1,15 +1,14 @@
 <template>
   <!-- header background image -->
-    <div :style="isTouch ? `backgroundImage: url(${barmobile})` : `backgroundImage: url(${bar})` " class="backdrop-blur bg-opacity-50 relative bg-cover" style="height: calc(100vh - 16px);">
-      <div class="absolute top-0 right-0 bottom-0 left-0 bg-black opacity-20 z-0"></div>
+    <div :style="isTouch ? `backgroundImage: url(${barmobile})` : `backgroundImage: url(${bar})` " class="backdrop-blur bg-opacity-50 relative bg-cover bg-center" style="height: calc(100vh - 16px);">
+      <div class="absolute top-0 right-0 bottom-0 left-0 bg-black/50 z-0"></div>
       <div class="relative d-flex justify-content-center align-items-center z-10" style="height: 100%">
         <!-- header text -->
           <div class="col-sm-12 d-flex flex-column justify-content-center align-items-center">
             <img :src="logonomono" class="myMonoLogo mb-3" id="logonomono" alt="tic&tac logo">
             
             <div class="row mb-4 col text-center myText">
-              <p class="horairesAdresses text-xl font-semibold lg:text-2xl lg:font-normal" style="color: #ff8000;">De 17h00 à 01h00</p>
-              <p class="text-lg lg:text-xl text-white">Du lundi au samedi</p>
+              <p class="horairesAdresses text-xl font-semibold lg:text-xl lg:font-normal" ><span class="text-orange-400">De 17h00 à 01h00</span> - Du lundi au samedi </p>
             </div>
   
             <div class="flex flex-col my-2 gap-3 w-full md:w-96 p-3">
@@ -25,7 +24,7 @@
 import { reactive,ref, toRefs } from 'vue'
 import windowWidthMixin from '@/mixins/windowWidthMixin'
 import Button from './UI/Button.vue'
-import bar from "~/assets/img/header-img.jpg"
+import bar from "~/public/images/background.webp"
 import barmobile from "~/assets/img/header-mobile.jpg"
 import monogram from "~/assets/img/monogram.png"
 import logonomono from "~/assets/img/logo-navbar.png"

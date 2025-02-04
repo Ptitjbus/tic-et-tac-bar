@@ -1,20 +1,8 @@
 <template>
-  <div class="container bg-black pb-5" :style="isMobile ? 'padding-top: 5rem;' : 'padding-top: 6rem;'">
-    <div class="row text-white justify-content-center">
-      <div class="col-sm-7" :style="isMobile ? 'width: 95%' : ''">
-        <MainTitle label="Réservation" :centered="!isMobile" />
-        <p class="mt-4">
-          Que ce soit simplement pour venir boire un verre entre amis, mais aussi pour organiser un événement chez nous (afterwork, anniversaire, séminaire, etc.), n'hésite pas à réserver via le formulaire ci-dessous.
-          <br /><br />
-          Nous nous efforcerons de te recontacter pour te confirmer la réservation 😊
-          <br /><br />
-          Nous acceptons les réservations de 2 à 40 personnes, le tout sans frais.
-        </p>
-      </div>
-    </div>
+  <div class="container min-h-svh flex items-center" :style="isMobile ? 'padding-top: 5rem;' : 'padding-top: 6rem;'">
+      <ReservationForm></ReservationForm>
   </div>
 
-  <ReservationForm></ReservationForm>
 </template>
 
 
