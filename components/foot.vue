@@ -5,9 +5,9 @@
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-8 md:mb-0">
-              <a href="https://tic-et-tac-bar.fr/">
-                  <img :src="logonomono" class="h-8 me-3" id="logonomono" alt="tic&tac logo">
-              </a>
+            <router-link to="/">
+                <img :src="logonomono" class="h-8 me-3" id="logonomono" alt="tic&tac logo">
+            </router-link>
           </div>
           <div class="flex flex-wrap gap-8 sm:gap-16 sm:grid-cols-3">
                 <div class="w-full sm:w-auto">

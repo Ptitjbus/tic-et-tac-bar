@@ -15,8 +15,11 @@ export default {
         '160': '40rem',
         '192': '48rem',
         '256': '64rem',
+      },
+      colors: {
+        'custom-orange':'#FF8000',
       }
-    }
+    },
   },
   plugins: [],
 }

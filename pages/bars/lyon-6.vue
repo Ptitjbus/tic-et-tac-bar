@@ -1,46 +1,9 @@
 <template>
   <article class="bg-black" :style="isMobile ? 'padding-top: 5rem;' : 'padding-top: 2rem;'">
-    <BarPageHero :title="pageData.shortTitle" :address="pageData.address" :year="pageData.creationYear" :horaires="pageData.openingHours" :image-path="pageData.image" />
-    <div class="flex flex-col lg:flex-row max-w-screen-xl pb-24 md:px-12 relative container">
-      <div class="flex flex-col gap-5 basis-2/3 lg:pr-8 lg:mr-8 sm:mb-8">
-        <section class="flex flex-col gap-3 text-gray-200">
-          <p v-for="(text, index) in pageData.intro" :key="index" class="text-pretty text-lg *:text-orange-400">
-            {{ text }}
-          </p>
-        </section>
-        <section v-for="(text, index) in pageData.texts" :key="index" class="flex flex-col gap-2 text-gray-200 font-light">
-          <h2 v-if="text.title" class="text-2xl font-semibold mb-2 text-white">{{ text.title }}</h2>
-          <p v-if="text.sentences" v-for="(sentence, index) in text.sentences" :key="index" class="text-pretty text-lg">
-            {{ sentence }}
-          </p>
-          <NuxtImg v-if="text.imagePath" :src="text.imagePath" class="h-96 object-cover rounded-md" />
-        </section>
-      </div>
-      <div class="flex flex-col gap-12 basis-1/3">
-        <div class="flex flex-col gap-3 bg-white/10 w-full p-4 text-white">
-          <h3 class="text-2xl font-semibold border-b-2 border-orange-400 w-fit">Carte</h3>
-          <Button :to="pageData.menuLink" label="Voir la carte" />
-        </div>
-        <div class="flex flex-col gap-3 bg-white/10 w-full p-4 text-white">
-          <h3 class="text-2xl font-semibold border-b-2 border-orange-400 w-fit">Localisation</h3>
-          <iframe
-            :src="pageData.maplink"
-            width="600" height="450" class="w-full h-128  overflow-clip" allowfullscreen></iframe>
-        </div>
-        <div class="flex flex-col gap-3 bg-white/10 w-full p-4 text-white">
-          <h3 class="text-2xl font-semibold border-b-2 border-orange-400 w-fit">Suivez nous</h3>
-          <div v-for="social in pageData.socials" class="flex items-center justify-between border-b pb-2 border-white/10 group cursor-pointer" :key="social.name">
-            <div class="flex gap-3">
-              <div class="rounded-full w-9 h-9 flex justify-center items-center  bg-white/10">
-                <component :is="social.icon" class="w-4 h-4 fill-white group-hover:fill-orange-400 transition-all duration-300 ease-in-out" />
-              </div>
-              <a :href="social.link" target="_blank" rel="no-referer" class="flex items-center text-base font-semibold group-hover:text-orange-400 transition-all duration-300 ease-in-out">{{ social.name}}</a>
-            </div>
-            <Arrow class="h-5 w-5 fill-orange-400 group-hover:translate-x-1 transition-all duration-300 ease-in-out"/>
-          </div>
-        </div>
-      </div>
-    </div>
+    <BarPageHero :title="pageData.shortTitle" :address="pageData.address" :year="pageData.creationYear"
+      :horaires="pageData.openingHours" :image-path="pageData.image" />
+    <BarPageBody :title="pageData.title" :description="pageData.description" :maplink="pageData.maplink"
+      :menuLink="pageData.menuLink" :socials="pageData.socials" :intro="pageData.intro" :texts="pageData.texts" />
   </article>
 </template>
 
@@ -48,22 +11,24 @@
 import BarPageHero from '~/components/BarsPage/BarPageHero.vue';
 import InstagramSvg from '~/public/svg/instagram.vue'
 import FacebookSvg from '~/public/svg/facebook.vue'
-import Arrow from '~/public/svg/arrow.vue';
-import Button from '~/components/UI/Button.vue';
+import BarPageBody from '~/components/BarsPage/BarPageBody.vue';
+import windowWidthMixin from '~/mixins/windowWidthMixin';
+
 export default {
   name: 'BarsPage',
-  components: { BarPageHero, InstagramSvg, FacebookSvg, Arrow, Button },
+  components: { BarPageHero, BarPageBody },
+  mixins: [windowWidthMixin],
   setup() {
 
-    const pageData = ref({
+    const pageData = shallowRef({
       title: 'Tic & Tac Lyon 6',
       shortTitle: 'Lyon 6',
       address: '47 Rue Garibaldi - 69006 Lyon',
       creationYear: '2024',
       openingHours: '17h00 à 01h00',
       description: 'Bienvenue au Tic & Tac Lyon 6, votre nouveau lieu incontournable situé au 47 Rue Garibaldi, dans le sixième arrondissement de Lyon',
-      image: '/images/lyon6.webp',
-      maplink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.1789863103027!2d4.83613917736641!3d45.74755757107988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eb7d9e819e2b%3A0xcf8fb327d3b9188a!2sTic%20%26%20Tac%20-%20Lyon%207!5e0!3m2!1sfr!2sfr!4v1736792434018!5m2!1sfr!2sfr&mode=night",
+      image: '/images/image4.webp',
+      maplink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d310.8444707109082!2d4.8503109724886215!3d45.76999817927811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eaf3193f1803%3A0x4cd050ddcb80680d!2s47%20Rue%20Garibaldi%2C%2069006%20Lyon!5e1!3m2!1sfr!2sfr!4v1738792000293!5m2!1sfr!2sfr",
       menuLink: "/cartelyon6.pdf",
       socials: [
         {

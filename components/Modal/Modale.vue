@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="flex justify-end gap-4">
-                    <button @click="confirm" class="px-4 py-2 bg-orange-400 text-white rounded-md hover:bg-orange-500">
+                    <button @click="confirm" class="px-4 py-2 bg-custom-orange text-white rounded-md hover:bg-orange-500">
                         Fermer
                     </button>
                 </div>

@@ -1,11 +1,11 @@
 <template>
   <div class="container min-h-screen bg-black">
-    <div class="flex flex-col gap-12 lg:flex-row">
+    <div class="flex flex-col gap-12 mb-12 lg:flex-row">
       <div class="flex flex-col justify-content-center mb:w-3/5">
         <MainTitle label="L'esprit Tic & Tac" class="mb-5"></MainTitle>
 
         <div class="mt-4">
-          <p v-for="(text, index) in texts" :key="index" class="text-lg font-sans text-white text-pretty mb-3" >
+          <p v-for="(text, index) in texts" :key="index" class="text-lg font-sans text-white text-justify text-pretty mb-3" >
               {{ text }}
           </p>
         </div>

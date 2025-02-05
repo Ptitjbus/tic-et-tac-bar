@@ -74,25 +74,22 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-- justifier les textes ✔
-- page d'accueil : nos bars -> nos établissements ✔
-- Résezrver une table ✔
-- faire sauter les textes ✔
-- aucun détails sur chaque bars dans la page d'accueil ✔
-- page de contact buisiness dans le footer -> refaire le footer ✔
-- voir carte -> notre carte ✔
-- trouver phrase pour dire que les places sont réservées à l'intérieur en période estivale ✔
-- lyon 7 40 lyon6 5O personnes pour la réservation ✔
-- essayer de trouver comment mettre en off la possibilité de reserver pendant les vacances des employés
-- rappler les horaires d'ouverture dans les pages des bars ✔
-
 ### TODO ✔
 
-- check pourquoi la navbar ne s'affiche pas ✔
-- redirections pages boutons ✔
-- page about bug ✔
-- email sending ✔
-- avis google ✔
-- icon footer ✔
-- horaires formulaire ✔
-- title ✔
+
+- [x] liste déroulante pour le nombre de personnes
+- [x] mettre le bon orange
+- [x] voir pour mettre en valeur nos réservations en mobile 
+- [x] justifier les textes
+- [x] l'espris tic et tac mobile -> marge sous la photo
+- [x] photo header de lyon 6 à modifier
+- [x] numéro de téléphone responsive
+- [x] enlever bearcrumb sur la page des bars
+- [x] responsive pour le hero 
+- [x] nos offres -> notre offre et enlever la description
+- [x] liqueures maison -> liqueurs signature
+- [x] page des bars -> marge au dessus de voire carte
+- [x] voir si la carte est bien celle de lyon 6 pour le bar lyon 6
+- [x] footer, voir le lien et mettre le router
+- [x] dans le formulaire de réservation -> mettre les addresses dans les boutons
+- [x] 1 à 40 au lieu de 2 à 40

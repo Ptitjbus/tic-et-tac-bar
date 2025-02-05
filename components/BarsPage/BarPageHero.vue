@@ -1,15 +1,12 @@
 <template>
     <div class="flex flex-col my-5 h-72 sm:h-96 md:h-128 relative justify-end text-white">
         <div class="flex flex-col justify-center z-1 h-full mx-auto">
-            <div class="flex mb-2 gap-2 font-semibold">
-                <router-link to="/bars">Bars</router-link> | {{ title }}
-            </div>
-            <h1 class="uppercase text-3xl lg:text-8xl font-bold ">
+            <h1 class="uppercase text-3xl md:text-6xl lg:text-8xl font-bold ">
                 Tic & Tac -
                 <span style="color: #ff8000">{{ title }}</span>
             </h1>
         </div>
-        <div v-if="!isTouch" class=" w-full z-1 px-6 z-1 bg-orange-400">
+        <div v-if="!isTouch" class=" w-full z-1 px-6 z-1 bg-custom-orange">
             <div class="mx-auto max-w-2xl lg:max-w-none">
                 <div class="mx-auto max-w-5xl">
                     <dl class="-mx-6 grid grid-cols-1 text-sm text-orange-100 sm:mx-0 sm:grid-cols-3">
@@ -40,7 +37,7 @@ import windowWidthMixin from '@/mixins/windowWidthMixin'
 import Button from '@/components/UI/Button.vue'
 
 export default {
-    name: 'About',
+    name: 'Hero',
     components: { MainTitle, Button },
     mixins: [windowWidthMixin],
     props: {

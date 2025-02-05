@@ -2,10 +2,7 @@
   <div class="container mt-4 mb-32">
 
     <div  class="flex flex-col justify-content-center align-items-center text-white my-16">
-        <MainTitle label="Nos offres" centered />
-        <p class="text-center mt-3 lg:text-lg font-light">
-          Offrez vous les meilleurs produits locaux, et savourez les créations et liqueurs maison faîtes avec soin.
-        </p>
+        <MainTitle label="Notre offre" centered />
     </div>
 
     <div class="row gap-3 md:!gap-0 no-gutters">
@@ -53,7 +50,7 @@ export default {
       },
       {
         orangeLabel: 'Liqueurs',
-        whiteLabel: 'maison',
+        whiteLabel: 'signature',
         src: photos.offerLiquors
       },
       {

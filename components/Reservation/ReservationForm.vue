@@ -8,46 +8,51 @@
     <MainTitle label="Formulaire de réservation" black :centered="!isMobile"></MainTitle>
     <form class="mt-5" ref="form" @submit.prevent="handleSubmit">
       <div class="flex flex-col gap-5 mt-8">
-
         <div class="relative w-full">
-          <label class="block text-base mb-4">Établissement *</label>
-          <div class="flex gap-4">
+          <label class="block text-base mb-3">Établissement *</label>
+          <div class="flex flex-col gap-2 md:flex-row md:gap-4">
             <label class="cursor-pointer w-full">
               <input type="radio" name="BAR" value="Lyon 6" v-model="template_param.BAR" required class="hidden" />
               <span
-                class="px-6 py-2 w-full rounded-lg border-2 transition-colors duration-200 ease-in-out flex items-center justify-center"
+                class="px-6 py-2 w-full rounded-lg border-2 transition-colors duration-200 ease-in-out flex flex-col gap-1 items-center justify-center"
                 :class="template_param.BAR === 'Lyon 6'
-                  ? 'bg-orange-500 text-white border-orange-500'
-                  : 'border-gray-300 hover:border-orange-500'">
+                  ? 'bg-custom-orange text-white border-custom-orange'
+                  : 'border-gray-300 hover:border-custom-orange'">
                 Lyon 6
+                <span class="text-xs text-gray-500 transition-colors duration-200 ease-in-out" :class="template_param.BAR === 'Lyon 6' && ' !text-gray-200'">
+                  47 Rue Garibaldi - 69006 Lyon
+                </span>
               </span>
             </label>
             <label class="cursor-pointer w-full">
               <input type="radio" name="BAR" value="Lyon 7" v-model="template_param.BAR" required class="hidden" />
               <span
-                class="px-6 py-2 w-full rounded-lg border-2 transition-colors duration-200 ease-in-out flex items-center justify-center"
-                :class="template_param.BAR === 'Lyon 7'
-                  ? 'bg-orange-500 text-white border-orange-500'
-                  : 'border-gray-300 hover:border-orange-500'">
+              class="px-6 py-2 w-full rounded-lg border-2 transition-colors duration-200 ease-in-out flex flex-col gap-1 items-center justify-center"
+              :class="template_param.BAR === 'Lyon 7'
+                  ? 'bg-custom-orange text-white border-custom-orange'
+                  : 'border-gray-300 hover:border-custom-orange'">
                 Lyon 7
+                <span class="text-xs text-gray-500 transition-colors duration-200 ease-in-out" :class="template_param.BAR === 'Lyon 7' && ' !text-gray-200'">
+                  135 Rue Sébastien Gryphe, 69007 Lyon
+                </span>
               </span>
             </label>
           </div>
         </div>
       </div>
-      <div class="flex gap-4 my-12">
+      <div class="flex flex-col md:flex-row gap-5 md:gap-4 my-12">
         <div class="relative w-full group">
           <input v-model="template_param.NOM" name="NOM" type="text"
-            class="w-full h-10 border-b-2 border-gray-200 focus:border-orange-500 outline-none text-lg peer" />
-          <label class="absolute left-0 -top-6 text-base transition-all peer-focus:text-orange-500">
+            class="w-full h-10 border-b-2 border-gray-200 focus:border-custom-orange outline-none text-lg peer" />
+          <label class="absolute left-0 -top-6 text-base transition-all peer-focus:text-custom-orange">
             Prénom *
           </label>
         </div>
 
         <div class="relative w-full group">
           <input v-model="template_param.PHONE" name="PHONE" type="tel" required
-            class="w-full h-10 border-b-2 border-gray-200 focus:border-orange-500 outline-none text-lg peer" />
-          <label class="absolute left-0 -top-6 text-base transition-all peer-focus:text-orange-500">
+            class="w-full h-10 border-b-2 border-gray-200 focus:border-custom-orange outline-none text-lg peer" />
+          <label class="absolute left-0 -top-6 text-base transition-all peer-focus:text-custom-orange">
             Numéro de téléphone *
           </label>
         </div>
@@ -55,14 +60,21 @@
 
       <div class="flex flex-col gap-5 my-12">
         <div class="relative w-full">
-          <div>
-            <input v-model="template_param.NOMBRE" type="number" name="NOMBRE" min="2" :max="template_param.BAR === 'Lyon 6' ? 50 : 40"
-              class="w-full h-10 border-b-2 border-gray-200 focus:border-orange-500 outline-none text-lg pb-3" />
-            <label class="absolute left-0 -top-6 text-base mb-2">
-              Nombre de personnes *
-            </label>
-            <small class="text-gray-500 text-xs">De 2 à {{ template_param.BAR === 'Lyon 6' ? '50' : '40'}} personnes.</small>
-          </div>
+          <select 
+            v-model="template_param.NOMBRE" 
+            name="NOMBRE"
+            class="w-full h-10 border-b-2 border-gray-200 focus:border-custom-orange outline-none text-lg pb-3"
+          >
+            <option v-for="n in (template_param.BAR === 'Lyon 6' ? 50 : 40)" 
+                    :key="n" 
+                    :value="n">
+              {{ n }}
+            </option>
+          </select>
+          <label class="absolute left-0 -top-6 text-base mb-2">
+            Nombre de personnes *
+          </label>
+          <small class="text-gray-500 text-xs">De 1 à {{ template_param.BAR === 'Lyon 6' ? '50' : '40'}} personnes.</small>
         </div>
 
         <div class="relative w-full">
@@ -91,8 +103,8 @@
 
       <div class="relative w-full mb-8">
         <textarea v-model="template_param.COMMENTAIRE" name="COMMENTAIRE" rows="2"
-          class="w-full border-b-2 border-gray-200 focus:border-orange-500 outline-none text-lg resize-none peer"></textarea>
-        <label class="absolute left-0 -top-6 text-base transition-all peer-focus:text-orange-500">
+          class="w-full border-b-2 border-gray-200 focus:border-custom-orange outline-none text-lg resize-none peer"></textarea>
+        <label class="absolute left-0 -top-6 text-base transition-all peer-focus:text-custom-orange">
           Un message à nous transmettre ?
         </label>
       </div>
@@ -100,7 +112,7 @@
 
       <div class="flex justify-center mb-4">
         <button type="submit"
-          class="py-3 w-full bg-gray-900 text-white rounded-md font-medium hover:bg-orange-500 hover:text-black transition-colors duration-300">
+          class="py-3 w-full bg-gray-900 text-white rounded-md font-medium hover:bg-custom-orange hover:text-black transition-colors duration-300">
           Confirmer
         </button>
       </div>
@@ -167,7 +179,7 @@ export default {
       console.log(typeof template_param.value.JOUR, template_param.value.JOUR)
       if(parseInt(template_param.value.NOMBRE) < 8) {
         modalTitle.value = "Réservation confirmée !"
-        modalText.value = `Votre demande de réservation pour ${template_param.value.NOMBRE} personnes à bien été prise en compte pour Tic & Tac ${template_param.value.BAR}, le ${template_param.value.JOUR} à ${template_param.value.HEURE}`
+        modalText.value = `Votre demande de réservation pour ${template_param.value.NOMBRE} ${template_param.value.NOMBRE === 1 ? 'personne' : "personnes"} à bien été prise en compte pour Tic & Tac ${template_param.value.BAR}, le ${template_param.value.JOUR} à ${template_param.value.HEURE}. À bientôt !`
       } else {
         modalTitle.value = "Demande envoyée !"
         modalText.value = "Merci pour votre demande ! Pour les groupes de plus de 8 personnes, un membre de notre équipe vous contactera sous peu pour finaliser la réservation."

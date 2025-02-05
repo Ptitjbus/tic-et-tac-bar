@@ -11,10 +11,10 @@
 
     <div class="divToPush">
       <div class="text-center">
-        <ul class="navbar-nav text-center gap-8 mr-8">
+        <ul class="navbar-nav text-center gap-3 md:!gap-8 mr-8">
           <li class="active text-align-center">
             <router-link to="/">
-              <span class="text-sm font-semibold text-white ">
+              <span class="text-xs md:text-sm font-semibold text-white ">
                 Accueil
                 <div class="underline" :style="$route.path == '/' ? 'width: 100%' : ''"></div>
               </span>
@@ -23,7 +23,7 @@
 
           <li>
             <router-link class="text-align-center" to="/bars">
-              <span class="text-sm font-semibold text-white">
+              <span class="text-xs md:text-sm font-semibold text-white">
                 Nos établissements
                 <div class="underline" :style="$route.path == '/bars' ? 'width: 100%' : ''"></div>
               </span>
@@ -32,7 +32,7 @@
 
           <li>
             <router-link class="text-align-center" to="/about">
-              <span class="text-sm font-semibold text-white">
+              <span class="text-xs md:text-sm font-semibold text-white">
                 L’esprit Tic & Tac
                 <div class="underline" :style="$route.path == '/about' ? 'width: 100%' : ''"></div>
               </span>
@@ -41,7 +41,7 @@
 
           <li>
             <router-link class="text-align-center" to="/reservation">
-              <span class="text-sm font-semibold text-white">
+              <span class="text-xs md:text-sm font-semibold text-white">
                 Réserver une table
                 <div class="underline" :style="$route.path == '/reservation' ? 'width: 100%' : ''"></div>
               </span>
