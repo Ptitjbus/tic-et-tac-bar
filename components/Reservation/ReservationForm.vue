@@ -1,13 +1,12 @@
 <template>
+  <Modale v-model="showModal" 
+           :title="modalTitle"
+           @confirm="handleConfirm">
+      <p>{{ modalText }}</p>
+  </Modale>
   <div class="max-w-3xl mx-auto bg-white rounded-lg p-8 shadow-md mb-5">
-    <MainTitle v-if="!isEmailSent" label="Formulaire de réservation" black :centered="!isMobile"></MainTitle>
-
-    <h5 v-else class="text-lg">
-      Votre demande de réservation a bien été prise en compte.<br /><br />
-      Cette dernière vous sera confirmée par l'équipe dans les plus brefs délais, merci.
-    </h5>
-
-    <form v-if="!isEmailSent" class="mt-5" ref="form" @submit.prevent="sendMail">
+    <MainTitle label="Formulaire de réservation" black :centered="!isMobile"></MainTitle>
+    <form class="mt-5" ref="form" @submit.prevent="handleSubmit">
       <div class="flex flex-col gap-5 mt-8">
 
         <div class="relative w-full">
@@ -35,7 +34,8 @@
             </label>
           </div>
         </div>
-
+      </div>
+      <div class="flex gap-4 my-12">
         <div class="relative w-full group">
           <input v-model="template_param.NOM" name="NOM" type="text"
             class="w-full h-10 border-b-2 border-gray-200 focus:border-orange-500 outline-none text-lg peer" />
@@ -66,7 +66,7 @@
         </div>
 
         <div class="relative w-full">
-          <VueDatePicker v-model="template_param.JOUR" name="JOUR" model-type="PPPP" locale="fr" :min-date="new Date()"
+          <VueDatePicker v-model="template_param.JOUR" name="JOUR" locale="fr" model-type="dd/MM/yyyy" :min-date="new Date()"
             :enable-time-picker="false" :disabled-week-days="[0]" format="dd/MM/yyyy" auto-apply required
             class="w-full " />
           <label class="absolute left-0 -top-6 text-base mb-2">
@@ -105,22 +105,18 @@
         </button>
       </div>
 
-      <p class="text-sm text-center text-gray-600 font-bold mb-2">
-        ⚠ Veuillez noter que la réservation en terrasse n'est pas disponible pendant les mois où elle est ouverte.
-        Toutes les places sont réservées à l'intérieur.
+      <p class="text-sm text-center text-gray-600 font-bold mb-4">
+        ⚠ Veuillez noter pendant les mois où la terrasse est ouverte, il n'est pas possible d'y réserver une table.
+        Toutes les places sont réservées à l'intérieur. ⚠
       </p>
 
-      <p class="text-xs text-gray-600 mb-6">
+      <p class="text-xs text-gray-600">
         Conformément au RGPD, toute donnée est acheminée immédiatement vers l'adresse contact@tic-et-tac-bar.fr, sans
         qu'aucune information ne soit conservée.
         <br />
         Toutes les questions marquées d'un astérisque (*) doivent être complétées obligatoirement.
       </p>
     </form>
-
-    <div v-else class="mt-5 flex justify-center items-center w-full">
-      <img :src="emailSentGif" class="rounded-lg w-full h-auto" />
-    </div>
   </div>
 </template>
 
@@ -132,15 +128,19 @@ import windowWidthMixin from '@/mixins/windowWidthMixin'
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import emailSentGif from "~//assets/gifs/emailsent.gif"
+import Modale from '@/components/Modal/Modale.vue';
 
 export default {
-  components: { MainTitle, VueDatePicker },
+  components: { MainTitle, VueDatePicker, Modale },
   mixins: [windowWidthMixin],
   setup() {
     const config = useRuntimeConfig()
     const form = ref(null);
     const inputFieldReset = ref(null);
-    let isEmailSent = ref(false)
+    const showModal = ref(false)
+    const modalTitle = ref()
+    const modalText = ref()
+    const router = useRouter()
     let gifs = reactive({
       emailSentGif: ref(emailSentGif)
     })
@@ -155,11 +155,30 @@ export default {
       COMMENTAIRE: '',
     })
 
+    
+
+  const handleConfirm = () => {
+    router.push("/")
+    showModal.value = false
+  }
+
+    const handleSubmit = () => {
+      sendMail()
+      console.log(typeof template_param.value.JOUR, template_param.value.JOUR)
+      if(parseInt(template_param.value.NOMBRE) < 8) {
+        modalTitle.value = "Réservation confirmée !"
+        modalText.value = `Votre demande de réservation pour ${template_param.value.NOMBRE} personnes à bien été prise en compte pour Tic & Tac ${template_param.value.BAR}, le ${template_param.value.JOUR} à ${template_param.value.HEURE}`
+      } else {
+        modalTitle.value = "Demande envoyée !"
+        modalText.value = "Merci pour votre demande ! Pour les groupes de plus de 8 personnes, un membre de notre équipe vous contactera sous peu pour finaliser la réservation."
+      }
+      showModal.value = true
+    }
+
     const sendMail = () => {
-      emailjs.send(config.public.emailServiceId, config.public.emailTemplateId, template_param.value, config.public.emailApiKey)
+      emailjs.send(config.public.emailServiceId,template_param.value.BAR === 'Lyon 6' ? config.public.emailTemplateIdLyon6 : config.public.emailTemplateIdLyon7, template_param.value, config.public.emailApiKey)
         .then(() => {
           inputFieldReset.value = " ";
-          isEmailSent.value = true
         }, (error) => {
           alert('Message not sent', error);
         });
@@ -175,8 +194,12 @@ export default {
     return {
       form,
       inputFieldReset,
+      handleConfirm,
+      showModal,
+      handleSubmit,
+      modalTitle,
+      modalText,
       sendMail,
-      isEmailSent,
       ...toRefs(gifs),
       currentDatePlusOne,
       template_param
