@@ -27,7 +27,7 @@ export default {
       creationYear: '2024',
       openingHours: '17h00 à 01h00',
       description: 'Bienvenue au Tic & Tac Lyon 6, votre nouveau lieu incontournable situé au 47 Rue Garibaldi, dans le sixième arrondissement de Lyon',
-      image: '/images/image4.webp',
+      image: '/images/lyon6-4.webp',
       maplink: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d310.8444707109082!2d4.8503109724886215!3d45.76999817927811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4eaf3193f1803%3A0x4cd050ddcb80680d!2s47%20Rue%20Garibaldi%2C%2069006%20Lyon!5e1!3m2!1sfr!2sfr!4v1738792000293!5m2!1sfr!2sfr",
       menuLink: "/cartelyon6.pdf",
       socials: [
