@@ -20,7 +20,7 @@
                   : 'border-gray-300 hover:border-custom-orange'">
                 Lyon 6
                 <span class="text-xs text-gray-500 transition-colors duration-200 ease-in-out" :class="template_param.BAR === 'Lyon 6' && ' !text-gray-200'">
-                  47 Rue Garibaldi - 69006 Lyon
+                  47 Rue Garibaldi, 69006 Lyon
                 </span>
               </span>
             </label>

@@ -8,7 +8,7 @@
             <img :src="logonomono" class="w-4/5 md:w-2/4 lg:w-1/3 mb-3" id="logonomono" alt="tic&tac logo">
             
             <div class="row mb-4 col text-center">
-              <p class="text-white text-lg md:text-xl font-semibold lg:text-xl" ><span class="text-custom-orange">De 17h00 à 01h00</span> - Du lundi au samedi </p>
+              <p class="text-white flex flex-col text-lg md:text-xl font-semibold lg:text-xl" ><span class="text-custom-orange">De 17h00 à 01h00</span> Du lundi au samedi </p>
             </div>
   
             <div class="flex flex-col my-2 gap-3 w-full md:w-96 p-3">

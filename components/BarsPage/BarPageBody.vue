@@ -26,7 +26,7 @@
                     allowfullscreen></iframe>
             </div>
             <div class="flex flex-col gap-3 bg-white/10 w-full p-4 text-white">
-                <h3 class="text-2xl font-semibold border-b-2 border-custom-orange w-fit">Suivez nous</h3>
+                <h3 class="text-2xl font-semibold border-b-2 border-custom-orange w-fit">Suivez-nous</h3>
                 <div v-for="social in socials"
                     class="flex items-center justify-between border-b pb-2 border-white/10 group cursor-pointer"
                     :key="social.name">
