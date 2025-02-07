@@ -52,7 +52,7 @@ export default {
         {
           title: "Une carte qui séduira tous les palais",
           sentences: [
-            "Dans la continuité de notre premier bar, Tic & Tac Lyon 6 vous propose une vaste sélection de cocktails, classiques ou originaux, élaborés avec passion à partir de nos liqueurs maison. Les amateurs de bière pourront savourer nos 6 bières et cidre artisanaux à la pression, ainsi qu'une sélection de bières en bouteille.",
+            "Dans la continuité de notre premier bar, Tic & Tac Lyon 6 vous propose une vaste sélection de cocktails, classiques ou originaux, élaborés avec passion à partir de nos liqueurs signature. Les amateurs de bière pourront savourer nos 6 bières et cidre artisanaux à la pression, ainsi qu'une sélection de bières en bouteille.",
             "Pour varier les plaisirs, nous proposons également des vins sélectionnés, des spiritueux de qualité et des boissons sans alcool."
           ],
         },
@@ -65,7 +65,7 @@ export default {
         {
           title: "Une terrasse en plein cœur de Lyon",
           sentences: [
-            "nstallez-vous sur notre terrasse et laissez-vous porter par l’atmosphère vivante de la rue Garibaldi. Entre la terrasse principale de 20 places, accessible toute l’année, et la placette voisine offrant 20 places supplémentaires en saison, chaque espace vous invite à savourer un verre dans une ambiance conviviale et décontractée.",
+            "Installez-vous sur notre terrasse et laissez-vous porter par l’atmosphère vivante de la rue Garibaldi. Entre la terrasse principale de 20 places, accessible toute l’année, et la placette voisine offrant 20 places supplémentaires en saison, chaque espace vous invite à savourer un verre dans une ambiance conviviale et décontractée.",
           ],
         }
       ],

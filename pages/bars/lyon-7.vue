@@ -50,7 +50,7 @@ export default {
         {
           title: "Une carte qui séduira tous les palais",
           sentences: [
-            "Chez Tic & Tac Lyon 7, nous vous proposons une vaste sélection de cocktails, classiques ou originaux, élaborés avec soin à partir de nos liqueurs maison. ",
+            "Chez Tic & Tac Lyon 7, nous vous proposons une vaste sélection de cocktails, classiques ou originaux, élaborés avec soin à partir de nos liqueurs signature. ",
             "Les amateurs de bière ne sont pas en reste, avec une large gamme de bières artisanales et régionales, disponibles en pression ou en bouteille.",
             "Et pour varier les plaisirs, découvrez également nos vins sélectionnés, nos spiritueux de qualité, ou encore nos boissons sans alcool, idéales pour tous les goûts.",
           ],
