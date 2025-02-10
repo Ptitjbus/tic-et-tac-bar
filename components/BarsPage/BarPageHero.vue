@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col my-5 h-72 sm:h-96 md:h-128 relative justify-end text-white">
+    <div class="flex flex-col mb-5 lg:my-5 h-72 sm:h-96 md:h-128 relative justify-end text-white">
         <div class="flex flex-col justify-center z-1 h-full mx-auto">
             <h1 class="uppercase text-3xl md:text-6xl lg:text-8xl font-bold ">
                 Tic & Tac -

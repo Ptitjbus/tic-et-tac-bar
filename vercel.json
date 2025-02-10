@@ -4,11 +4,5 @@
     "cleanUrls": true,
     "framework": "nuxtjs",
     "installCommand": "npm install",
-    "outputDirectory": ".output/public",
-    "rewrites": [
-        {
-        "source": "/cartelyon6.pdf",
-        "destination": "https://tic-et-tac-bar.fr/cartelyon6.pdf"
-        }
-    ]
+    "outputDirectory": ".output/public"
 }

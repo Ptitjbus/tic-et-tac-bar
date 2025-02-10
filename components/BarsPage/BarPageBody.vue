@@ -1,6 +1,8 @@
 <template>
     <div class="flex flex-col lg:flex-row max-w-screen-xl pb-24 md:px-12 relative container">
         <div class="flex flex-col gap-5 basis-2/3 lg:pr-8 lg:mr-8 mb-8">
+            <Button v-if="isTablet || isMobile" :to="menuLink" full-width label="Voir la carte" :icon="MenuSvg" />
+            <hr v-if="isTablet" class="text-gray-400">
             <section class="flex flex-col gap-3 text-gray-200">
                 <p v-for="(text, index) in intro" :key="index" class="text-pretty text-justify text-lg *:text-custom-orange">
                     {{ text }}
@@ -16,7 +18,7 @@
             </section>
         </div>
         <div class="flex flex-col gap-12 basis-1/3">
-            <div class="flex flex-col gap-3 bg-white/10 w-full p-4 text-white">
+            <div v-if="!isTablet && !isMobile" class="flex flex-col gap-3 bg-white/10 w-full p-4 text-white">
                 <h3 class="text-2xl font-semibold border-b-2 border-custom-orange w-fit">Carte</h3>
                 <Button :to="menuLink" label="Voir la carte" />
             </div>
@@ -54,10 +56,11 @@ import FacebookSvg from '~/public/svg/facebook.vue'
 import Arrow from '~/public/svg/arrow.vue';
 import Button from '~/components/UI/Button.vue';
 import windowWidthMixin from '~/mixins/windowWidthMixin';
+import MenuSvg from '~/public/svg/menu.vue';
 
 export default {
     name: 'BarsPageBody',
-    components: { BarPageHero, InstagramSvg, FacebookSvg, Arrow, Button },
+    components: { BarPageHero, InstagramSvg, FacebookSvg, Arrow, Button, MenuSvg },
     mixins: [windowWidthMixin],
     props: {
         title: {
@@ -87,6 +90,11 @@ export default {
         texts: {
             type: Array,
             required: true
+        }
+    },
+    data(){
+        return {
+            MenuSvg
         }
     }
 }
