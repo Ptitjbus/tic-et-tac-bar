@@ -7,8 +7,8 @@
     "outputDirectory": ".output/public",
     "rewrites": [
         {
-        "source": "/carte.pdf",
-        "destination": "https://tic-et-tac-bar.fr/carte.pdf"
+        "source": "/cartelyon6.pdf",
+        "destination": "https://tic-et-tac-bar.fr/cartelyon6.pdf"
         }
     ]
 }
