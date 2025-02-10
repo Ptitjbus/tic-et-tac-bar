@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <NuxtImg :src="imagePath" class="absolute w-full h-full inset-0 object-cover" />
+        <img :src="imagePath" class="absolute w-full h-full inset-0 object-cover" />
         <div class="absolute inset-0 bg-black/30"></div>
     </div>
 </template>

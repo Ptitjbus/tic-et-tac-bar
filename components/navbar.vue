@@ -6,7 +6,7 @@
     }">
 
     <router-link class="ml-8 w-32" to="/">
-      <NuxtImg src="/images/logo-navbar.png" alt="tic&tac logo" />
+      <img src="/images/logo-navbar.png" alt="tic&tac logo" />
     </router-link>
 
     <div class="divToPush">

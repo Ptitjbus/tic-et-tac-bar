@@ -12,7 +12,7 @@
                     class="text-pretty text-justify text-lg">
                     {{ sentence }}
                 </p>
-                <NuxtImg v-if="text.imagePath" :src="text.imagePath" class="h-96 object-cover rounded-md" />
+                <img v-if="text.imagePath" :src="text.imagePath" class="h-96 object-cover rounded-md" />
             </section>
         </div>
         <div class="flex flex-col gap-12 basis-1/3">
