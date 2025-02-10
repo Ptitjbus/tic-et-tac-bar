@@ -4,5 +4,11 @@
     "cleanUrls": true,
     "framework": "nuxtjs",
     "installCommand": "npm install",
-    "outputDirectory": ".output/public"
+    "outputDirectory": ".output/public",
+    "rewrites": [
+        {
+        "source": "/carte.pdf",
+        "destination": "https://tic-et-tac-bar.fr/carte.pdf"
+        }
+    ]
 }

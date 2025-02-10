@@ -14,7 +14,10 @@ export default defineNuxtConfig({
   ],
 
   modules: ["@nuxt/image", 'nuxt-icon'],
-
+  // routeRules: {
+  //   '/carte.pdf': { redirect: '/api/carte' },
+  //   '/cartelyon6.pdf': { redirect: '/api/cartelyon6' },
+  // },
   runtimeConfig: {
     public: {
       emailServiceId: process.env.EMAIL_SERVICE_ID, 
