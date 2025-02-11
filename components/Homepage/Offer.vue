@@ -14,7 +14,7 @@
             {{ offer.whiteLabel }}
         </p>
         <div class="offer-filter"></div>
-        <img :src="offer.src" :alt="offer.label" class="offer-image"/>
+        <img width="378" height="378" :src="offer.src" :alt="offer.orangeLabel + ' ' + offer.whiteLabel" class="offer-image"/>
       </div>
     </div>
   </div>

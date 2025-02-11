@@ -6,7 +6,7 @@
     <div class="row">
       <div v-for="(cocktail, index) in cocktails" :key="index" class="col-md-4 col-6 g-4">
         <div class="cardCarrou">
-          <img :src="cocktail.src"  class="card-img-top" :alt="cocktail.alt">
+          <img width="400" height="500" :src="cocktail.src"  class="card-img-top" :alt="cocktail.alt" loading="eager" />
         </div>
       </div>
     </div>

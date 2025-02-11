@@ -12,8 +12,31 @@ export default defineNuxtConfig({
     "~/node_modules/bootstrap/dist/css/bootstrap.min.css",
     '~/assets/css/main.css'
   ],
-
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'fr'
+      }
+    }
+  },
+  generate: {
+    routes: ['/'], // Ajoutez vos routes ici
+  },
   modules: ["@nuxt/image", 'nuxt-icon'],
+  image: {
+    format: ['webp'],
+    domains: ['localhost'],
+    provider: 'ipx',
+    screens: {
+      'xs': 320,
+      'sm': 640,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1280,
+      'xxl': 1536,
+      '2xl': 1536
+    },
+  },
   runtimeConfig: {
     public: {
       emailServiceId: process.env.EMAIL_SERVICE_ID, 
