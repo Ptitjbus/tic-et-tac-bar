@@ -20,6 +20,37 @@ export default {
     const form = ref(null);
     const inputFieldReset = ref(null);
 
+    const baseUrl = window.location.origin
+    useHead({
+        title: "Réservation - Tic & Tac",
+        meta: [
+            {
+                name: 'description',
+                content : "Réservez votre table au Tic & Tac Lyon et profitez d'une ambiance conviviale autour de cocktails signature, bières artisanales et produits locaux. Que ce soit pour un apéro entre amis ou une soirée spéciale, assurez votre place dès maintenant dans nos bars des 6ᵉ et 7ᵉ arrondissements !"
+            },
+            {
+                property: 'og:title',
+                content: "Réservation - Tic & Tac"
+            },
+            {
+                property: 'og:description',
+                content : "Réservez votre table au Tic & Tac Lyon et profitez d'une ambiance conviviale autour de cocktails signature, bières artisanales et produits locaux. Que ce soit pour un apéro entre amis ou une soirée spéciale, assurez votre place dès maintenant dans nos bars des 6ᵉ et 7ᵉ arrondissements !"
+            },
+            {
+                property: 'og:image',
+                content: `${baseUrl}/images/tchin.webp`
+            },
+            {
+                name: 'twitter:card',
+                content: 'summary_large_image'
+            },
+            {
+                name: 'twitter:image',
+                content: `${baseUrl}/images/tchin.webp`
+            }
+        ]
+    })
+
     return{
       form,
       inputFieldReset
